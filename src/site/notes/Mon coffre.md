@@ -4,3 +4,6 @@
 
 
 voici mon coffre obsidian
+
+
+[[COMMANDE shutdown\|COMMANDE shutdown]]
