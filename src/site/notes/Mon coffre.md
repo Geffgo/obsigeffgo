@@ -6,4 +6,4 @@
 voici mon coffre obsidian
 
 
-[[COMMANDE shutdown\|COMMANDE shutdown]]
+[[Architecture P2P\|Architecture P2P]]
