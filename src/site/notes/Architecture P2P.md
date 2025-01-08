@@ -3,6 +3,8 @@
 ---
 
 
+[[Page d'accueil\|Page d'accueil]]
+# Architecture P2P
 
 ### **UTILITÉ**
 L'architecture P2P (Peer-to-Peer) permet à des ordinateurs ou dispositifs de se connecter directement les uns aux autres pour partager des ressources, des données ou des services sans nécessiter de serveur central. Cette architecture est souvent utilisée pour le partage de fichiers, les communications en temps réel et les réseaux décentralisés.
@@ -14,7 +16,7 @@ L'architecture P2P (Peer-to-Peer) permet à des ordinateurs ou dispositifs de se
 - **Partage de ressources** : Les utilisateurs peuvent partager directement des fichiers, de la bande passante et d'autres ressources entre eux.
 
 ## **EXEMPLES**
-[[SIO/QBitTorrent\|QBitTorrent]] 
+[[QBitTorrent\|QBitTorrent]] 
 
 ### **REMARQUES IMPORTANTES**
 De nombreuses innovations technologiques récentes explorent et étendent l'architecture P2P, notamment dans le cadre de la décentralisation et des technologies blockchain.
