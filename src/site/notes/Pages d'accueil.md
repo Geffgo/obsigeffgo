@@ -6,5 +6,5 @@
 # Pages d'accueil
 
 ## Modules 1: Les réseaux aujourd'hui
-- [[1.0. Introduction\|1.0. Introduction]]
-n'importe quoi **en gras**
+[[1.0. Introduction\|1.0. Introduction]]
+
