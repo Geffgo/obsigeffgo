@@ -1,12 +1,12 @@
 :root {
-  --background-primary: rgb(42, 42, 42); /* Fond légèrement plus clair */
-  --background-secondary: rgb(57, 56, 56);
-  --text-normal: #dcddde;
-  --text-accent: rgb(97, 186, 245);
+  --background-primary: rgb(255, 253, 220); /* Jaune pâle pour le fond général */
+  --background-secondary: rgb(255, 240, 200); /* Jaune encore plus doux pour les sections secondaires */
+  --text-normal: #4f4f4f; /* Gris foncé pour le texte */
+  --text-accent: rgb(255, 99, 71); /* Rouge tomate pour les liens */
   --file-margins: 32px;
 
-  --callout-border-width: 0px;
-  --callout-border-opacity: 0.25;
+  --callout-border-width: 2px;
+  --callout-border-opacity: 0.4;
   --callout-padding: 12px 12px 12px 24px;
   --callout-radius: 4px;
   --callout-blend-mode: lighten;
@@ -15,26 +15,35 @@
   --callout-content-padding: 0;
 }
 
-// Titres (h1, h2, h3, h4) avec des couleurs spécifiques
+// Fond jaune pâle pour le body
+body {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 20px;
+}
+
+// Titres (h1, h2, h3, h4) avec des couleurs rouges
 h1 {
-  color: #f0f0f0; /* Titres plus clairs pour un meilleur contraste */
+  color: rgb(255, 99, 71); /* Rouge tomate pour les titres */
 }
 
 h2 {
-  color: #f06449;
+  color: rgb(255, 69, 0); /* Rouge plus foncé pour les sous-titres */
 }
 
 h3 {
-  color: #d4fcc3;
+  color: rgb(255, 99, 71); /* Rouge tomate pour les sous-sous-titres */
 }
 
 h4 {
-  color: #72dcff;
+  color: rgb(255, 69, 0); /* Rouge plus foncé pour les autres titres */
 }
 
 // Style des boutons
 button {
-  background-color: #4caf50; /* Couleur verte */
+  background-color: rgb(255, 99, 71); /* Rouge tomate */
   border: none;
   color: white;
   padding: 10px 20px;
@@ -44,35 +53,8 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: rgb(255, 69, 0); /* Rouge plus foncé au survol */
   transform: scale(1.05); /* Effet de zoom */
-}
-
-// Centrage d'un élément
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-// Styles pour les thèmes (sombre et clair)
-.theme-dark {
-  background: var(--background-primary);
-  color: var(--text-normal);
-  font-family: var(--font-default);
-}
-
-.theme-light {
-  background: white;
-  color: black;
-  font-family: var(--font-default);
-}
-
-// Liens internes non résolus (Obsidian)
-a.is-unresolved {
-  color: rgb(97 186 245 / 65%);
 }
 
 // Liens généraux avec effet au survol
@@ -81,32 +63,21 @@ a {
   color: var(--text-accent);
 }
 
-a[href^="[["] {
-  color: #0066cc; /* Liens internes en bleu */
-  text-decoration: none;
+a:hover {
+  color: rgb(255, 69, 0); /* Changement de couleur lors du survol */
 }
 
-a[href^="[["]:hover {
-  text-decoration: underline;
-  color: #004d99; /* Couleur plus foncée au survol */
-}
-
-// Taille de police personnalisée pour certaines classes
-.font-bg {
-  font-size: 92px;
-}
-
-// Style des citations blockquote
+// Citations blockquote avec fond jaune pâle et bordure rouge
 blockquote {
-  background: #ffffff17;
-  border-left: 10px solid #c1dbe3;
+  background: rgba(255, 253, 220, 0.8); /* Jaune pâle translucide */
+  border-left: 10px solid rgb(255, 99, 71); /* Bordure rouge */
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
 
 blockquote:before {
-  color: #ccc;
+  color: rgb(255, 99, 71); /* Rouge tomate pour les guillemets */
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
@@ -120,26 +91,28 @@ blockquote p {
 
 // Style du code en ligne (inline code)
 p > code {
-  color: #c7254e;
-  background-color: #1a1a1a;
+  color: rgb(255, 99, 71); /* Rouge tomate pour le code en ligne */
+  background-color: #f7f7f7; /* Fond jaune très pâle */
 }
 
-// Callouts (boîtes d'informations spécifiques)
+// Callouts avec bordure rouge et fond jaune pâle
 .callout {
-  --callout-color: 68, 138, 255;
+  --callout-color: 255, 99, 71; /* Rouge tomate */
   --callout-icon: lucide-pencil;
+  background-color: rgba(255, 99, 71, 0.1); /* Fond rouge pâle */
+  border-left: 4px solid rgb(255, 99, 71); /* Bordure rouge */
 }
 
 .callout[data-callout="abstract"],
 .callout[data-callout="summary"],
 .callout[data-callout="tldr"] {
-  --callout-color: 0, 176, 255;
-  --callout-icon: lucide-clipboard-list;
+  --callout-color: 255, 99, 71; /* Rouge tomate */
+  background-color: rgba(255, 99, 71, 0.1); /* Fond rouge pâle */
 }
 
 .callout[data-callout="info"],
 .callout[data-callout="todo"] {
-  --callout-color: 0, 184, 212;
+  --callout-color: 255, 99, 71; /* Rouge tomate */
 }
 
 .callout[data-callout="info"] {
@@ -150,117 +123,14 @@ p > code {
   --callout-icon: lucide-check-circle-2;
 }
 
-.callout[data-callout="tip"],
-.callout[data-callout="hint"],
-.callout[data-callout="important"] {
-  --callout-color: 0, 191, 165;
-  --callout-icon: lucide-flame;
-}
-
-.callout[data-callout="success"],
-.callout[data-callout="check"],
-.callout[data-callout="done"] {
-  --callout-color: 0, 200, 83;
-  --callout-icon: lucide-check;
-}
-
-.callout[data-callout="question"],
-.callout[data-callout="help"],
-.callout[data-callout="faq"] {
-  --callout-color: 100, 221, 23;
-  --callout-icon: help-circle;
-}
-
-.callout[data-callout="warning"],
-.callout[data-callout="caution"],
-.callout[data-callout="attention"] {
-  --callout-color: 255, 145, 0;
-  --callout-icon: lucide-alert-triangle;
-}
-
-.callout[data-callout="failure"],
-.callout[data-callout="fail"],
-.callout[data-callout="missing"] {
-  --callout-color: 255, 82, 82;
-  --callout-icon: lucide-x;
-}
-
-.callout[data-callout="danger"],
-.callout[data-callout="error"] {
-  --callout-color: 255, 23, 68;
-  --callout-icon: lucide-zap;
-}
-
-.callout[data-callout="bug"] {
-  --callout-color: 245, 0, 87;
-  --callout-icon: lucide-bug;
-}
-
-.callout[data-callout="example"] {
-  --callout-color: 124, 77, 255;
-  --callout-icon: lucide-list;
-}
-
-.callout[data-callout="quote"],
-.callout[data-callout="cite"] {
-  --callout-color: 158, 158, 158;
-  --callout-icon: lucide-quote;
-}
-
-.callout {
-  overflow: hidden;
-  border-style: solid;
-  border-color: rgba(var(--callout-color), var(--callout-border-opacity));
-  border-width: var(--callout-border-width);
-  border-radius: var(--callout-radius);
-  margin: 1em 0;
-  mix-blend-mode: var(--callout-blend-mode);
-  background-color: rgba(var(--callout-color), 0.1);
-  padding: var(--callout-padding);
-}
-
-.callout.is-collapsible .callout-title {
-  cursor: default;
-}
-
-.callout-title {
-  padding: var(--callout-title-padding);
-  display: flex;
-  gap: 4px;
-  font-size: var(--callout-title-size);
-  color: rgb(var(--callout-color));
-  line-height: 1.3;
-}
-
-.callout-content {
-  overflow-x: auto;
-  padding: var(--callout-content-padding);
-}
-
-.callout-icon {
-  flex: 0 0 auto;
-  display: flex;
-  align-self: center;
-}
-
+// Ajout de la couleur rouge pour l'icône
 .callout-icon .svg-icon {
-  color: rgb(var(--callout-color));
+  color: rgb(255, 99, 71); /* Rouge tomate pour les icônes */
 }
 
-.callout-title-inner {
+// Style des titres de callout
+.callout-title {
+  color: rgb(255, 99, 71); /* Rouge tomate pour les titres de callouts */
   font-weight: 600;
-}
-
-.callout-fold {
-  display: flex;
-  align-items: center;
-  padding-right: 8px;
-}
-
-.callout-fold .svg-icon {
-  transition: transform 100ms ease-in-out;
-}
-
-.callout.is-collapsed .callout-fold .svg-icon {
-  transform: rotate(-90deg);
+  font-size: 1.2em;
 }
