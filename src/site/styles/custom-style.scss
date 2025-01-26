@@ -1,57 +1,52 @@
-// Corps de la page avec fond rose pâle et texte monospace
+/* Corps de la page avec fond rose pâle et texte monospace */
 body {
-  // Fond rose pâle
-  background-color: #f8e0e6;
-
-  // Police monospace simple
-  font-family: 'Courier New', Courier, monospace;
-
-  // Taille de police générale et couleur de texte
+  background-color: #f8e0e6; /* Fond rose pâle */
+  font-family: 'Courier New', Courier, monospace; /* Police monospace */
   font-size: 16px;
-  color: #4f4f4f; // Gris foncé pour contraster avec le fond
-
-  // Espacement du corps de la page
+  color: #4f4f4f; /* Gris foncé */
   margin: 0;
-  padding: 0;
-
-  // Ajout de padding au corps pour ne pas coller les bords
   padding: 20px;
+  box-sizing: border-box; /* Assure que les paddings n'affectent pas les dimensions */
 }
 
-// Section contenu avec un fond plus clair et une bordure douce
+/* Section contenu avec un fond plus clair et une bordure douce */
 .content {
-  // Fond légèrement plus pâle pour la section de contenu
-  background-color: #fcd0d6;
-  
-  // Bordure arrondie pour un effet doux
-  border-radius: 10px;
-
-  // Un peu d'ombre portée pour ajouter de la profondeur
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  // Espacement interne pour le contenu
+  background-color: #fcd0d6; /* Fond plus clair */
+  border-radius: 10px; /* Bordure arrondie */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre portée */
   padding: 20px;
-
-  // Taille de la police et couleur
   font-size: 14px;
   line-height: 1.6;
-  color: #3a3a3a;
+  color: #3a3a3a; /* Gris plus foncé pour le texte */
 }
 
-// Style des titres h1 avec une couleur rose plus intense
+/* Style des titres h1, h2, h3, etc. avec une couleur rose plus intense */
 h1 {
-  // Couleur rose foncé pour les titres
-  color: #f53a53;
-
-  // Taille de la police plus grande pour le titre
+  color: #f53a53; /* Rose foncé */
   font-size: 2.5em;
-
-  // Espacement autour du titre
   margin-bottom: 20px;
   padding-bottom: 10px;
 }
 
-// Exemple de style pour les paragraphes
+h2 {
+  color: #f53a53;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #f53a53;
+  font-size: 1.75em;
+  margin-bottom: 15px;
+}
+
+h4, h5, h6 {
+  color: #f53a53;
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+
+/* Style pour les paragraphes */
 p {
   font-size: 1em;
   color: #4f4f4f;
@@ -59,24 +54,130 @@ p {
   margin-bottom: 10px;
 }
 
-// Ajout de style pour les liens si nécessaire
-/* Style pour les liens */
-a {
-  color: #d11a3f; /* Un rose plus foncé */
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline; /* Souligner lors du survol */
-}
-/* Style pour les liens vers d'autres fiches Obsidian */
+/* Style des liens Obsidian vers d'autres fiches */
 a[href^="[["] {
-  color: #e62d2d; /* Vert foncé pour bien marquer les liens vers d'autres fiches */
-  text-decoration: none; /* Pas de soulignement par défaut */
+  color: #006400; /* Vert foncé pour les liens vers d'autres fiches */
+  text-decoration: none;
 }
 
 a[href^="[["]:hover {
   text-decoration: underline; /* Souligner lors du survol */
 }
 
+/* Style pour les liens classiques */
+a {
+  color: #ee314b; /* Couleur rose pour les liens externes */
+  text-decoration: none;
+}
 
+a:hover {
+  text-decoration: underline; /* Souligner lors du survol */
+}
+
+/* Liste ordonnée et non ordonnée */
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* Liste ordonnée (numérotée) */
+ol {
+  list-style-type: decimal;
+}
+
+/* Liste non ordonnée (à puces) */
+ul {
+  list-style-type: disc;
+}
+
+/* Citations */
+blockquote {
+  border-left: 4px solid #f53a53; /* Bordure rouge à gauche */
+  padding-left: 10px;
+  font-style: italic;
+  color: #555555; /* Gris plus clair pour le texte */
+  margin-bottom: 15px;
+}
+
+/* Code en ligne */
+code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f1f1f1;
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: #d11a3f; /* Rouge pour se démarquer */
+}
+
+/* Blocs de code (code block) */
+pre {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Tableaux */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+th, td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+/* Style des boutons Markdown (si utilisés) */
+button {
+  background-color: #f53a53; /* Rose foncé */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e42c42; /* Changer la couleur du bouton au survol */
+}
+
+/* Style pour le texte en gras */
+strong, b {
+  font-weight: bold; /* Texte en gras */
+  color: #f53a53; /* Rose foncé pour le texte en gras */
+}
+
+/* Style pour le texte en italique */
+em, i {
+  font-style: italic; /* Texte en italique */
+  color: #d11a3f; /* Rouge pour le texte en italique */
+}
+
+/* Style pour le texte en gras et italique */
+strong em, strong i {
+  font-weight: bold;
+  font-style: italic;
+  color: #e42c42; /* Couleur différente pour le gras + italique */
+}
