@@ -69,5 +69,14 @@ a {
 a:hover {
   text-decoration: underline; /* Souligner lors du survol */
 }
+/* Style pour les liens vers d'autres fiches Obsidian */
+a[href^="[["] {
+  color: #e62d2d; /* Vert foncé pour bien marquer les liens vers d'autres fiches */
+  text-decoration: none; /* Pas de soulignement par défaut */
+}
+
+a[href^="[["]:hover {
+  text-decoration: underline; /* Souligner lors du survol */
+}
 
 
