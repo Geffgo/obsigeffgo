@@ -60,12 +60,14 @@ p {
 }
 
 // Ajout de style pour les liens si nécessaire
+/* Style pour les liens */
 a {
-  color: #ee314b; // Couleur rose pour les liens
+  color: #d11a3f; /* Un rose plus foncé */
   text-decoration: none;
-
-  &:hover {
-    text-decoration: underline; // Souligner lors du survol
-  }
 }
+
+a:hover {
+  text-decoration: underline; /* Souligner lors du survol */
+}
+
 
