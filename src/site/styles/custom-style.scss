@@ -2,7 +2,7 @@
 $creme: #f5f5dc; // Crème clair
 $rouge: #b22222; // Rouge profond
 $bleu-marine: #002147; // Bleu marine
-$texte: $bleu-marine; // Utilisation du bleu marine pour le texte
+$texte: $bleu-marine; // Texte principal
 
 // Reset de base
 * {
@@ -31,7 +31,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-bottom: 15px;
   font-size: 1rem;
-  color: $texte; // Texte principal en bleu marine
 }
 
 // Liens
@@ -49,10 +48,12 @@ a {
 ul, ol {
   margin-left: 20px;
   margin-bottom: 15px;
+  color: $bleu-marine; // Couleur des listes en bleu marine
 }
 
 li {
   margin-bottom: 5px;
+  color: $bleu-marine; // Couleur des éléments de liste en bleu marine
 }
 
 // Boutons
@@ -75,6 +76,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  color: $bleu-marine; // Texte des tableaux en bleu marine
 
   th, td {
     border: 1px solid $rouge;
@@ -90,6 +92,17 @@ table {
   tr:nth-child(even) {
     background-color: lighten($creme, 10%);
   }
+}
+
+// Texte en gras
+strong, b {
+  color: $bleu-marine; // Texte en gras en bleu marine
+}
+
+// Texte en italique
+em, i {
+  color: $bleu-marine; // Texte en italique en bleu marine
+  font-style: italic;
 }
 
 // Formulaires
@@ -138,3 +151,4 @@ code, pre {
   color: $rouge;
   font-family: 'Courier New', monospace;
 }
+
