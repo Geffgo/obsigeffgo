@@ -23,13 +23,13 @@ h1, h2, h3, h4, h5, h6 {
   color: $rouge; // Titres en rouge
   margin-bottom: 10px;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 // Paragraphes
 p {
   margin-bottom: 15px;
   font-size: 1rem;
+  color: $bleu-marine;
 }
 
 // Liens
