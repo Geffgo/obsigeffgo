@@ -11,4 +11,5 @@ Il regroupe mes annotations, synthèses et notions essentielles associées aux r
 Ce système me permet de consigner mes progrès, de faire le lien entre mes idées et d'approfondir ma maîtrise des sujets techniques. Cet espace adaptable me donne aussi la possibilité de conserver un enregistrement structuré mes acquis.
 ## Modules 1: Les réseaux aujourd'hui
 [[1.0. Introduction\|1.0. Introduction]]
-
+[[1.1. Les réseaux affectent nos vies\|1.1. Les réseaux affectent nos vies]]
+[[1.2. Composants réseau\|1.2. Composants réseau]]
