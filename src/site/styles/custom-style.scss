@@ -1,136 +1,137 @@
-:root {
-  --background-primary: rgb(255, 253, 220); /* Jaune pâle pour le fond général */
-  --background-secondary: rgb(255, 240, 200); /* Jaune encore plus doux pour les sections secondaires */
-  --text-normal: #4f4f4f; /* Gris foncé pour le texte */
-  --text-accent: rgb(255, 99, 71); /* Rouge tomate pour les liens */
-  --file-margins: 32px;
+// Palette de couleurs
+$creme: #f5f5dc; // Crème clair
+$rouge: #b22222; // Rouge profond
+$texte: #3b3b3b; // Gris foncé pour le texte
 
-  --callout-border-width: 2px;
-  --callout-border-opacity: 0.4;
-  --callout-padding: 12px 12px 12px 24px;
-  --callout-radius: 4px;
-  --callout-blend-mode: lighten;
-  --callout-title-padding: 0;
-  --callout-title-size: inherit;
-  --callout-content-padding: 0;
+// Reset de base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-// Fond jaune pâle pour le body
 body {
-  background-color: var(--background-primary);
-  color: var(--text-normal);
-  font-family: 'Courier New', Courier, monospace;
-  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: $creme;
+  color: $texte;
+  line-height: 1.6;
   padding: 20px;
 }
 
-// Titres (h1, h2, h3, h4) avec des couleurs rouges
-h1 {
-  color: rgb(255, 99, 71); /* Rouge tomate pour les titres */
+// Titres
+h1, h2, h3, h4, h5, h6 {
+  color: $rouge;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-h2 {
-  color: rgb(255, 69, 0); /* Rouge plus foncé pour les sous-titres */
+// Paragraphes
+p {
+  margin-bottom: 15px;
+  font-size: 1rem;
 }
 
-h3 {
-  color: rgb(255, 99, 71); /* Rouge tomate pour les sous-sous-titres */
-}
-
-h4 {
-  color: rgb(255, 69, 0); /* Rouge plus foncé pour les autres titres */
-}
-
-// Style des boutons
-button {
-  background-color: rgb(255, 99, 71); /* Rouge tomate */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-  background-color: rgb(255, 69, 0); /* Rouge plus foncé au survol */
-  transform: scale(1.05); /* Effet de zoom */
-}
-
-// Liens généraux avec effet au survol
+// Liens
 a {
-  text-decoration: underline;
-  color: var(--text-accent);
+  color: $rouge;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-a:hover {
-  color: rgb(255, 69, 0); /* Changement de couleur lors du survol */
+// Listes
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
 }
 
-// Citations blockquote avec fond jaune pâle et bordure rouge
+li {
+  margin-bottom: 5px;
+}
+
+// Boutons
+button {
+  background-color: $rouge;
+  color: $creme;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: darken($rouge, 10%);
+  }
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+
+  th, td {
+    border: 1px solid $rouge;
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: lighten($rouge, 30%);
+    color: $creme;
+  }
+
+  tr:nth-child(even) {
+    background-color: lighten($creme, 10%);
+  }
+}
+
+// Formulaires
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid $rouge;
+  border-radius: 5px;
+  background-color: lighten($creme, 10%);
+}
+
+input[type="submit"], input[type="button"] {
+  background-color: $rouge;
+  color: $creme;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($rouge, 10%);
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  border: 3px solid $rouge;
+  border-radius: 10px;
+}
+
+// Citations
 blockquote {
-  background: rgba(255, 253, 220, 0.8); /* Jaune pâle translucide */
-  border-left: 10px solid rgb(255, 99, 71); /* Bordure rouge */
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
+  border-left: 5px solid $rouge;
+  margin: 15px 0;
+  padding-left: 10px;
+  color: darken($texte, 20%);
+  font-style: italic;
 }
 
-blockquote:before {
-  color: rgb(255, 99, 71); /* Rouge tomate pour les guillemets */
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.1em;
-  vertical-align: -0.4em;
-}
-
-blockquote p {
-  display: inline;
-}
-
-// Style du code en ligne (inline code)
-p > code {
-  color: rgb(255, 99, 71); /* Rouge tomate pour le code en ligne */
-  background-color: #f7f7f7; /* Fond jaune très pâle */
-}
-
-// Callouts avec bordure rouge et fond jaune pâle
-.callout {
-  --callout-color: 255, 99, 71; /* Rouge tomate */
-  --callout-icon: lucide-pencil;
-  background-color: rgba(255, 99, 71, 0.1); /* Fond rouge pâle */
-  border-left: 4px solid rgb(255, 99, 71); /* Bordure rouge */
-}
-
-.callout[data-callout="abstract"],
-.callout[data-callout="summary"],
-.callout[data-callout="tldr"] {
-  --callout-color: 255, 99, 71; /* Rouge tomate */
-  background-color: rgba(255, 99, 71, 0.1); /* Fond rouge pâle */
-}
-
-.callout[data-callout="info"],
-.callout[data-callout="todo"] {
-  --callout-color: 255, 99, 71; /* Rouge tomate */
-}
-
-.callout[data-callout="info"] {
-  --callout-icon: lucide-info;
-}
-
-.callout[data-callout="todo"] {
-  --callout-icon: lucide-check-circle-2;
-}
-
-// Ajout de la couleur rouge pour l'icône
-.callout-icon .svg-icon {
-  color: rgb(255, 99, 71); /* Rouge tomate pour les icônes */
-}
-
-// Style des titres de callout
-.callout-title {
-  color: rgb(255, 99, 71); /* Rouge tomate pour les titres de callouts */
-  font-weight: 600;
-  font-size: 1.2em;
+// Codes et pré
+code, pre {
+  background-color: lighten($creme, 15%);
+  padding: 5px;
+  border-radius: 5px;
+  color: $rouge;
+  font-family: 'Courier New', monospace;
 }
