@@ -1,7 +1,8 @@
 // Palette de couleurs
 $creme: #f5f5dc; // Crème clair
 $rouge: #b22222; // Rouge profond
-$texte: #3b3b3b; // Gris foncé pour le texte
+$bleu-marine: #002147; // Bleu marine
+$texte: $bleu-marine; // Utilisation du bleu marine pour le texte
 
 // Reset de base
 * {
@@ -30,6 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-bottom: 15px;
   font-size: 1rem;
+  color: $texte; // Texte principal en bleu marine
 }
 
 // Liens
@@ -98,6 +100,7 @@ input, textarea, select {
   border: 1px solid $rouge;
   border-radius: 5px;
   background-color: lighten($creme, 10%);
+  color: $texte;
 }
 
 input[type="submit"], input[type="button"] {
