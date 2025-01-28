@@ -1,234 +1,541 @@
-// Palette de couleurs
-$creme: #f5f5dc; // Crème clair
-$creme-dark: #1e1e1e; // Fond crème sombre pour Dark Theme
-$rouge: #b22222; // Rouge profond
-$bleu-marine: #002147; // Bleu marine
-$bleu-marine-dark: #0d1a2b; // Bleu marine sombre pour Dark Theme
-$gris-clair: #dcdcdc; // Gris clair pour le texte clair
-$gris-foncé: #a9a9a9; // Gris foncé pour le texte sombre
-
-// Définition des couleurs pour les thèmes
-$background-light: $creme;
-$background-dark: $creme-dark;
-$text-light: $bleu-marine;
-$text-dark: $gris-clair;
-
-// Variables pour la gestion de chaque thème
-$button-background-light: $rouge;
-$button-background-dark: darken($rouge, 15%);
-
-// Reset de base
+/*
+  Sanitize CSS
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
 }
-
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  padding: 20px;
-  
-  // Appliquer les couleurs du thème en fonction de la classe
-  &.light-theme {
-    background-color: $background-light;
-    color: $text-light;
-  }
-  
-  &.dark-theme {
-    background-color: $background-dark;
-    color: $text-dark;
-  }
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
-
-// Titres
-dg-settings > h1,
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
 h1,
 h2,
 h3,
-h4 {
-  color: $rouge;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-}
-
+h4,
+h5,
 h6 {
-  font-size: 1rem;
-  margin-bottom: 10px;
+    overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+/*
+  Custom CSS
+*/
+
+* {
+    font-family: Helvetica, Arial, Verdana, Tahoma;
 }
 
-// Paragraphes
+html {}
+
+.css-settings-manager {
+    background: #f4e1d2; /* Crème doux */
+    padding-bottom: 5rem;
+}
+
+.content {
+    max-width: 700px;
+    margin-left: 400px;
+}
+.cm-s-obsidian {
+    font-size: 1rem;
+}
+
+header h1 {
+    text-shadow: 5px 5px 0rem rgb(0,0,0);
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: reset;
+    color: #8b0000; /* Rouge foncé */
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    text-shadow: 0.2rem 0.2rem 0rem rgb(0,0,0);
+    text-transform: uppercase;
+    color: #8b0000; /* Rouge foncé */
+}
+
+/*404 page*/
+.font-bg {
+    display: none;
+}
+.centered,
+.centered h1,
+.centered p {
+    margin: 0;
+    padding-left: 0;
+}
+
+P,
+.task-list-item,
+.content,
+label {
+    line-height: 2rem;
+    color: #d4a1a1; /* Crème rosé */
+}
+
+label {
+    padding-left: 0.2rem;
+}
+
+ul.task-list {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+ul {
+    margin: 1rem;
+    padding-left: 1rem;
+}
+
+.tag {
+    cursor: pointer;
+    background: #b93b3b; /* Rouge doux */
+    padding: 0.5rem 0.5rem;
+    border-radius: 1rem;
+}
+
 p {
-  margin-bottom: 15px;
-  font-size: 1rem;
-  color: $bleu-marine;
+    padding-left: 1rem;
 }
-
-// Liens
-a {
-  color: $rouge;
-  text-decoration: none;
-  font-weight: bold;
-
-  &:hover {
+.task-list-item p {
+    padding-left: 0;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
     text-decoration: underline;
-  }
+    color: #b93b3b; /* Rouge doux */
+}
+a:active {
+    text-decoration: underline;
+    color: #b93b3b; /* Rouge doux */
 }
 
-// Listes
-ul, ol {
-  margin-left: 20px;
-  margin-bottom: 15px;
-  color: $bleu-marine;
-}
-
-li {
-  margin-bottom: 5px;
-}
-
-// Boutons
-button {
-  background-color: $button-background-light;
-  color: $creme;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-
-  &:hover {
-    background-color: darken($button-background-light, 10%);
-  }
-
-  // Style pour dark theme
-  &.dark-theme {
-    background-color: $button-background-dark;
-    color: $creme;
-  }
-
-  &:hover {
-    background-color: darken($button-background-dark, 10%);
-  }
-}
-
-// Tables
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-  color: $bleu-marine;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f4e1d2; /* Crème doux */
+}
 
-  th, td {
-    border: 1px solid $rouge;
-    padding: 10px;
-    text-align: left;
-  }
+th,
+td {
+    padding: 0.2rem 0.2rem 0.2rem 1rem;
+    vertical-align: top;
+}
+th {
+    background-color: #b93b3b; /* Rouge doux */
+    border: 1px solid;
+    border-color: #8b0000; /* Rouge foncé */
+}
+td {
+    border: 1px solid;
+    border-color: #8b0000; /* Rouge foncé */
+}
 
-  th {
-    background-color: lighten($rouge, 30%);
-    color: $creme;
-  }
+hr {
+    height: 1px;
+    border-width: 0;
+    background-color: #8b0000; /* Rouge foncé */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 
-  tr:nth-child(even) {
-    background-color: lighten($creme, 10%);
-  }
+tr:nth-child(even) {
+    background-color: #f4e1d2; /* Crème doux */
+}
+tr:hover {
+    background-color: #d3b1a1; /* Crème plus intense */
+}
 
-  // Dark theme table styles
-  &.dark-theme {
-    color: $gris-clair;
+.callout {
+    border-radius: 1rem;
+}
 
-    th {
-      background-color: lighten($rouge, 10%);
+.referred {
+    border-left: 2px solid;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-color: #b93b3b; /* Rouge doux */
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    margin-left: -3px;
+}
+
+.filetree-sidebar {
+    background: #f4e1d2; /* Crème doux */
+    width: 300px;
+    padding: 0;
+    filter: drop-shadow(0 0 .5rem rgb(0,0,0));
+}
+.filetree-sidebar .search-button {
+    width: 100%;
+    background: #b93b3b; /* Rouge doux */
+    border: none;
+}
+.filetree-sidebar .search-keys {
+    display: none;
+}
+
+.align-icon {
+    justify-content: space-between;
+}
+
+.filetree-sidebar h1 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 2rem 1rem 1rem;
+    background: #f4e1d2; /* Crème doux */
+}
+
+.filetree-sidebar .search-text {
+    padding-right: 1rem;
+}
+
+.filetree-sidebar .lucide-search {
+    padding-left: 0.3rem;
+}
+
+.filetree-sidebar > div {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid;
+    border-color: #8b0000; /* Rouge foncé */
+    background: #f4e1d2; /* Crème doux */
+}
+
+.filetree-sidebar > .folder {
+    border-bottom: none;
+    padding: 2rem 0 2rem 1rem;
+    background: #f4e1d2; /* Crème doux */
+}
+
+.filetree-sidebar > .folder > div > .folder {
+    border-bottom: 1px dashed;
+    border-color: #8b0000; /* Rouge foncé */
+}
+
+.filetree-sidebar > .folder > div > .notelink {
+    margin: 0;
+    padding-left: 2.2rem;
+}
+
+.filelist {
+    margin: 0;
+    padding-left: 0;
+}
+
+.filename {
+    margin: 0;
+    padding-right: 2rem;
+}
+
+.notelink.active-note {
+    background-color: #f4e1d2; /* Crème doux */
+    transform: translateX(0px);
+    text-decoration: underline;
+    color: #8b0000; /* Rouge foncé */
+}
+
+.sidebar {
+    position: absolute;
+    max-width: 300px;
+    min-width: 300px;
+    left: 1200px;
+    top: 110px;
+    height: 0;
+}
+
+.sidebar-container {
+    display: table;
+    padding: 0;
+}
+
+.toc {
+    border-radius: 0;
+    padding: 0;
+    background: #f4e1d2; /* Crème doux */
+}
+
+.toc-title-container {
+    border-left: 1px solid;
+    border-color: #8b0000; /* Rouge foncé */
+    background: #f4e1d2; /* Crème doux */
+    padding: 1rem 1rem 1rem 2rem;
+}
+
+.toc-title {}
+
+.toc-title-container .toc-title {
+    padding: 0;
+    border-radius: 0;
+}
+
+.toc-container {
+    border-color: #8b0000; /* Rouge foncé */
+    display: table;
+    padding: 1rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.toc ol {
+    border: none;
+    padding: 0;
+    counter-reset: list-number;
+}
+
+.toc-container li::before {
+    content: "" !important;
+}
+
+.toc li {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+
+.toc li ol {}
+
+.toc li ol a {}
+
+.toc-container li a {
+    padding-left: 0.1rem;
+    list-style-type: none;
+    counter-increment: list-number;
+}
+
+.toc-container li a:before {
+    content: counter(list-number);
+    content: counters(list-number, ".") ". ";
+}
+
+.backlinks {
+    border-left: 1px solid;
+    border-color: #8b0000; /* Rouge foncé */
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    background: #f4e1d2; /* Crème doux */
+}
+
+.backlink-title {
+    background: #f4e1d2; /* Crème doux */
+    padding: 1rem 1rem 1rem 2rem;
+}
+
+.backlinks .backlink-title {}
+
+.backlink-list {
+    border-left: none;
+    padding: 0 1rem 1rem;
+    border-left: none;
+    display: table;
+}
+
+.backlink-card .backlink {
+    margin: 0;
+}
+
+.backlink-card {
+    border-radius: 0;
+    margin: 0;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+}
+
+pre[class*=language-] {
+    background-color: #8b0000; /* Rouge foncé */
+    border-radius: 1rem;
+}
+
+.lucide-link {
+    display: none;
+}
+
+.notelink svg {
+    display: none;
+}
+
+.fullpage-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #8b0000; /* Rouge foncé */
+    opacity: 0.7;
+}
+
+@media (max-width: 1400px) {
+    .content {
+        max-width: 700px;
+        top: 5rem;
+        margin: 50px;
+    }
+    .navbar {
+        z-index: 5;
+        background: #f4e1d2; /* Crème doux */
+        filter: drop-shadow(0 0 1rem rgb(0,0,0));
+        height: 100px;
+    }
+    .toc {
+        display: table;
     }
 
-    tr:nth-child(even) {
-      background-color: darken($creme-dark, 10%);
+    .sidebar {
+        background: #ffffff;
+        border: none;
+        margin-left: -400px;
+        top: 150px;
     }
-  }
+
+    .sidebar-container {}
+
+    .navbar .search-keys {
+        display: none;
+    }
+
+    .navbar .lucide-search {
+        padding-left: 0.3rem;
+    }
+
+    .navbar .search-text span {
+        padding-right: 1rem;
+    }
+
+    .search-button {
+        background: #b93b3b; /* Rouge doux */
+        border: none;
+        min-width: 200px;
+    }
+
+    .navbar .align-icon {
+        border: none;
+    }
+
+    .navbar h1 {
+        font-size: 2rem !important;
+    }
+}
+@media (max-width: 1150px) {
+    .content {
+        max-width: 1200px;
+        margin: 2rem;
+        top: 5rem;
+        margin-bottom: 2rem;
+    }
+    .toc {
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
 }
 
-// Formulaires
-input, textarea, select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid $rouge;
-  border-radius: 5px;
-  background-color: lighten($creme, 10%);
-  color: $bleu-marine;
-
-  &.dark-theme {
-    background-color: darken($creme-dark, 5%);
-    color: $gris-clair;
-  }
+@media (max-width: 800px) {
+    .filetree-sidebar h1{
+        display: table;
+        width: 100%;
+    }
+    .filetree-sidebar .search-button {
+        margin: 10px 40px;
+    }
+    .navbar .align-icon{ 
+        display: none;
+    }
 }
 
-input[type="submit"], input[type="button"] {
-  background-color: $rouge;
-  color: $creme;
-  border: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: darken($rouge, 10%);
-  }
-
-  &.dark-theme {
-    background-color: darken($rouge, 10%);
-  }
+.toc > ol > li > a {
+    counter-increment: list-number;
 }
 
-// Citations
-blockquote {
-  border-left: 5px solid $rouge;
-  margin: 15px 0;
-  padding-left: 10px;
-  color: darken($bleu-marine, 20%);
-  font-style: italic;
-
-  &.dark-theme {
-    color: $gris-foncé;
-    border-left: 5px solid lighten($rouge, 20%);
-  }
+.toc > ol > li > a:before {
+    content: counter(list-number);
 }
 
-// Codes et pré
-code, pre {
-  background-color: lighten($creme, 15%);
-  padding: 5px;
-  border-radius: 5px;
-  color: $rouge;
-  font-family: 'Courier New', monospace;
-
-  &.dark-theme {
-    background-color: darken($creme-dark, 5%);
-    color: $rouge;
-  }
+.toc > ol > li > ol > li > a {
+    counter-increment: list-number;
 }
 
-// Animation (hérité de styles.css)
-.dg-rotate {
-  animation: dg-rotate 4s linear infinite;
+.toc > ol > li > ol > li > a:before {
+    content: counter(list-number);
+}
+
+.toc > ol > li > ol > li > ol > li > a {
+    counter-increment: list-number;
+}
+
+.toc > ol > li > ol > li > ol > li > a:before {
+    content: counter(list-number);
+}
+
+.toc > ol > li > ol > li > ol > li > ol > li > a {
+    counter-increment: list-number;
+}
+
+.toc > ol > li > ol > li > ol > li > ol > li > a:before {
+    content: counter(list-number);
+}
+
+li li li li li li a {
+    counter-increment: list-number;
+}
+
+li li li li li li a:before {
+    content: counter(list-number);
 }
