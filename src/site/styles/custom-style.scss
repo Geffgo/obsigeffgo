@@ -98,7 +98,17 @@ header h1 {
     color: #b93b3b !important; /* Rouge foncé */
 }
 
-h1,
+h1 {
+  color: #9b2d20 !important;  /* Rouge foncé */
+  font-size: 2.5rem !important;
+  line-height: 3rem !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+  padding-top: 1rem !important;
+  padding-left: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
 h2,
 h3,
 h4,
