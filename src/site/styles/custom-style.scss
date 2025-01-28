@@ -18,49 +18,42 @@ body {
 }
 
 // Titres
-// Titres
-h1 {
-  color: $rouge; // Titre H1 en rouge
+dg-settings > h1,
+h1,
+h2,
+h3,
+h4 {
+  color: $rouge; // Couleur principale des titres
+  margin-top: 40px;
   margin-bottom: 20px;
   font-weight: bold;
-  font-size: 2.5rem; // Taille plus grande pour H1
+}
+
+h1 {
+  font-size: 2.5rem; // Taille pour H1
 }
 
 h2 {
-  color: $rouge; // Titre H2 en rouge
-  margin-bottom: 18px;
-  font-weight: bold;
   font-size: 2rem; // Taille pour H2
 }
 
 h3 {
-  color: $rouge; // Titre H3 en rouge
-  margin-bottom: 16px;
-  font-weight: bold;
   font-size: 1.75rem; // Taille pour H3
 }
 
 h4 {
-  color: $rouge; // Titre H4 en rouge
-  margin-bottom: 14px;
-  font-weight: bold;
   font-size: 1.5rem; // Taille pour H4
 }
 
 h5 {
-  color: $rouge; // Titre H5 en rouge
-  margin-bottom: 12px;
-  font-weight: bold;
   font-size: 1.25rem; // Taille pour H5
+  margin-bottom: 12px;
 }
 
 h6 {
-  color: $rouge; // Titre H6 en rouge
+  font-size: 1rem; // Taille pour H6
   margin-bottom: 10px;
-  font-weight: bold;
-  font-size: 1rem; // Taille plus petite pour H6
 }
-
 
 // Paragraphes
 p {
@@ -89,7 +82,6 @@ ul, ol {
 
 li {
   margin-bottom: 5px;
-  color: $bleu-marine; // Eléments de liste en bleu marine
 }
 
 // Boutons
@@ -105,6 +97,11 @@ button {
   &:hover {
     background-color: darken($rouge, 10%);
   }
+}
+
+button:disabled {
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 // Tables
@@ -188,4 +185,7 @@ code, pre {
   font-family: 'Courier New', monospace;
 }
 
-
+// Animation (hérité de styles.css)
+.dg-rotate {
+  animation: dg-rotate 4s linear infinite;
+}
