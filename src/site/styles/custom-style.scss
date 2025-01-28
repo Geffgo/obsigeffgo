@@ -3,6 +3,7 @@ $creme: #f5f5dc; // Crème clair
 $rouge: #b22222; // Rouge profond
 $bleu-marine: #002147; // Bleu marine
 
+.theme-light {
 // Reset de base
 * {
   margin: 0;
@@ -189,3 +190,193 @@ code, pre {
 .dg-rotate {
   animation: dg-rotate 4s linear infinite;
 }
+}
+
+.theme-dark {
+  // Reset de base
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: $creme; // Fond crème
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  // Titres
+  dg-settings > h1,
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: $rouge; // Couleur principale des titres
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 2.5rem; // Taille pour H1
+  }
+  
+  h2 {
+    font-size: 2rem; // Taille pour H2
+  }
+  
+  h3 {
+    font-size: 1.75rem; // Taille pour H3
+  }
+  
+  h4 {
+    font-size: 1.5rem; // Taille pour H4
+  }
+  
+  h5 {
+    font-size: 1.25rem; // Taille pour H5
+    margin-bottom: 12px;
+  }
+  
+  h6 {
+    font-size: 1rem; // Taille pour H6
+    margin-bottom: 10px;
+  }
+  
+  // Paragraphes
+  p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: $bleu-marine;
+  }
+  
+  // Liens
+  a {
+    color: $rouge; // Liens en rouge
+    text-decoration: none;
+    font-weight: bold;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  // Listes
+  ul, ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: $bleu-marine; // Listes en bleu marine
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  // Boutons
+  button {
+    background-color: $rouge; // Boutons en rouge
+    color: $creme; // Texte des boutons en crème
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  
+    &:hover {
+      background-color: darken($rouge, 10%);
+    }
+  }
+  
+  button:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  
+  // Tables
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    color: $bleu-marine; // Tables en bleu marine
+  
+    th, td {
+      border: 1px solid $rouge; // Bordures des tableaux en rouge
+      padding: 10px;
+      text-align: left;
+    }
+  
+    th {
+      background-color: lighten($rouge, 30%);
+      color: $creme; // Texte des en-têtes en crème
+    }
+  
+    tr:nth-child(even) {
+      background-color: lighten($creme, 10%);
+    }
+  }
+  
+  // Texte en gras
+  strong, b {
+    color: $bleu-marine; // Texte en gras en bleu marine
+  }
+  
+  // Texte en italique
+  em, i {
+    color: $bleu-marine; // Texte en italique en bleu marine
+    font-style: italic;
+  }
+  
+  // Formulaires
+  input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid $rouge; // Bordures des formulaires en rouge
+    border-radius: 5px;
+    background-color: lighten($creme, 10%);
+    color: $bleu-marine; // Texte des formulaires en bleu marine
+  }
+  
+  input[type="submit"], input[type="button"] {
+    background-color: $rouge; // Boutons de formulaire en rouge
+    color: $creme; // Texte des boutons de formulaire en crème
+    border: none;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: darken($rouge, 10%);
+    }
+  }
+  
+  // Images
+  img {
+    max-width: 100%;
+    border: 3px solid $rouge; // Bordures des images en rouge
+    border-radius: 10px;
+  }
+  
+  // Citations
+  blockquote {
+    border-left: 5px solid $rouge; // Bordure gauche des citations en rouge
+    margin: 15px 0;
+    padding-left: 10px;
+    color: darken($bleu-marine, 20%); // Texte des citations en bleu marine plus foncé
+    font-style: italic;
+  }
+  
+  // Codes et pré
+  code, pre {
+    background-color: lighten($creme, 15%);
+    padding: 5px;
+    border-radius: 5px;
+    color: $rouge; // Texte des codes en rouge
+    font-family: 'Courier New', monospace;
+  }
+  
+  // Animation (hérité de styles.css)
+  .dg-rotate {
+    animation: dg-rotate 4s linear infinite;
+  }
+  }
