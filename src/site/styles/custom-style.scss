@@ -1,9 +1,22 @@
 // Palette de couleurs
 $creme: #f5f5dc; // Crème clair
+$creme-dark: #1e1e1e; // Fond crème sombre pour Dark Theme
 $rouge: #b22222; // Rouge profond
 $bleu-marine: #002147; // Bleu marine
+$bleu-marine-dark: #0d1a2b; // Bleu marine sombre pour Dark Theme
+$gris-clair: #dcdcdc; // Gris clair pour le texte clair
+$gris-foncé: #a9a9a9; // Gris foncé pour le texte sombre
 
-.theme-light {
+// Définition des couleurs pour les thèmes
+$background-light: $creme;
+$background-dark: $creme-dark;
+$text-light: $bleu-marine;
+$text-dark: $gris-clair;
+
+// Variables pour la gestion de chaque thème
+$button-background-light: $rouge;
+$button-background-dark: darken($rouge, 15%);
+
 // Reset de base
 * {
   margin: 0;
@@ -13,9 +26,19 @@ $bleu-marine: #002147; // Bleu marine
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: $creme; // Fond crème
   line-height: 1.6;
   padding: 20px;
+  
+  // Appliquer les couleurs du thème en fonction de la classe
+  &.light-theme {
+    background-color: $background-light;
+    color: $text-light;
+  }
+  
+  &.dark-theme {
+    background-color: $background-dark;
+    color: $text-dark;
+  }
 }
 
 // Titres
@@ -24,35 +47,35 @@ h1,
 h2,
 h3,
 h4 {
-  color: $rouge; // Couleur principale des titres
+  color: $rouge;
   margin-top: 40px;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
 h1 {
-  font-size: 2.5rem; // Taille pour H1
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 2rem; // Taille pour H2
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 1.75rem; // Taille pour H3
+  font-size: 1.75rem;
 }
 
 h4 {
-  font-size: 1.5rem; // Taille pour H4
+  font-size: 1.5rem;
 }
 
 h5 {
-  font-size: 1.25rem; // Taille pour H5
+  font-size: 1.25rem;
   margin-bottom: 12px;
 }
 
 h6 {
-  font-size: 1rem; // Taille pour H6
+  font-size: 1rem;
   margin-bottom: 10px;
 }
 
@@ -65,7 +88,7 @@ p {
 
 // Liens
 a {
-  color: $rouge; // Liens en rouge
+  color: $rouge;
   text-decoration: none;
   font-weight: bold;
 
@@ -78,7 +101,7 @@ a {
 ul, ol {
   margin-left: 20px;
   margin-bottom: 15px;
-  color: $bleu-marine; // Listes en bleu marine
+  color: $bleu-marine;
 }
 
 li {
@@ -87,8 +110,8 @@ li {
 
 // Boutons
 button {
-  background-color: $rouge; // Boutons en rouge
-  color: $creme; // Texte des boutons en crème
+  background-color: $button-background-light;
+  color: $creme;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -96,13 +119,18 @@ button {
   font-size: 1rem;
 
   &:hover {
-    background-color: darken($rouge, 10%);
+    background-color: darken($button-background-light, 10%);
   }
-}
 
-button:disabled {
-  pointer-events: none;
-  opacity: 0.4;
+  // Style pour dark theme
+  &.dark-theme {
+    background-color: $button-background-dark;
+    color: $creme;
+  }
+
+  &:hover {
+    background-color: darken($button-background-dark, 10%);
+  }
 }
 
 // Tables
@@ -110,33 +138,35 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
-  color: $bleu-marine; // Tables en bleu marine
+  color: $bleu-marine;
 
   th, td {
-    border: 1px solid $rouge; // Bordures des tableaux en rouge
+    border: 1px solid $rouge;
     padding: 10px;
     text-align: left;
   }
 
   th {
     background-color: lighten($rouge, 30%);
-    color: $creme; // Texte des en-têtes en crème
+    color: $creme;
   }
 
   tr:nth-child(even) {
     background-color: lighten($creme, 10%);
   }
-}
 
-// Texte en gras
-strong, b {
-  color: $bleu-marine; // Texte en gras en bleu marine
-}
+  // Dark theme table styles
+  &.dark-theme {
+    color: $gris-clair;
 
-// Texte en italique
-em, i {
-  color: $bleu-marine; // Texte en italique en bleu marine
-  font-style: italic;
+    th {
+      background-color: lighten($rouge, 10%);
+    }
+
+    tr:nth-child(even) {
+      background-color: darken($creme-dark, 10%);
+    }
+  }
 }
 
 // Formulaires
@@ -144,37 +174,44 @@ input, textarea, select {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid $rouge; // Bordures des formulaires en rouge
+  border: 1px solid $rouge;
   border-radius: 5px;
   background-color: lighten($creme, 10%);
-  color: $bleu-marine; // Texte des formulaires en bleu marine
+  color: $bleu-marine;
+
+  &.dark-theme {
+    background-color: darken($creme-dark, 5%);
+    color: $gris-clair;
+  }
 }
 
 input[type="submit"], input[type="button"] {
-  background-color: $rouge; // Boutons de formulaire en rouge
-  color: $creme; // Texte des boutons de formulaire en crème
+  background-color: $rouge;
+  color: $creme;
   border: none;
   cursor: pointer;
 
   &:hover {
     background-color: darken($rouge, 10%);
   }
-}
 
-// Images
-img {
-  max-width: 100%;
-  border: 3px solid $rouge; // Bordures des images en rouge
-  border-radius: 10px;
+  &.dark-theme {
+    background-color: darken($rouge, 10%);
+  }
 }
 
 // Citations
 blockquote {
-  border-left: 5px solid $rouge; // Bordure gauche des citations en rouge
+  border-left: 5px solid $rouge;
   margin: 15px 0;
   padding-left: 10px;
-  color: darken($bleu-marine, 20%); // Texte des citations en bleu marine plus foncé
+  color: darken($bleu-marine, 20%);
   font-style: italic;
+
+  &.dark-theme {
+    color: $gris-foncé;
+    border-left: 5px solid lighten($rouge, 20%);
+  }
 }
 
 // Codes et pré
@@ -182,201 +219,16 @@ code, pre {
   background-color: lighten($creme, 15%);
   padding: 5px;
   border-radius: 5px;
-  color: $rouge; // Texte des codes en rouge
+  color: $rouge;
   font-family: 'Courier New', monospace;
+
+  &.dark-theme {
+    background-color: darken($creme-dark, 5%);
+    color: $rouge;
+  }
 }
 
 // Animation (hérité de styles.css)
 .dg-rotate {
   animation: dg-rotate 4s linear infinite;
 }
-}
-
-.theme-dark {
-  // Reset de base
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: $creme; // Fond crème
-    line-height: 1.6;
-    padding: 20px;
-  }
-  
-  // Titres
-  dg-settings > h1,
-  h1,
-  h2,
-  h3,
-  h4 {
-    color: $rouge; // Couleur principale des titres
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  h1 {
-    font-size: 2.5rem; // Taille pour H1
-  }
-  
-  h2 {
-    font-size: 2rem; // Taille pour H2
-  }
-  
-  h3 {
-    font-size: 1.75rem; // Taille pour H3
-  }
-  
-  h4 {
-    font-size: 1.5rem; // Taille pour H4
-  }
-  
-  h5 {
-    font-size: 1.25rem; // Taille pour H5
-    margin-bottom: 12px;
-  }
-  
-  h6 {
-    font-size: 1rem; // Taille pour H6
-    margin-bottom: 10px;
-  }
-  
-  // Paragraphes
-  p {
-    margin-bottom: 15px;
-    font-size: 1rem;
-    color: $bleu-marine;
-  }
-  
-  // Liens
-  a {
-    color: $rouge; // Liens en rouge
-    text-decoration: none;
-    font-weight: bold;
-  
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  
-  // Listes
-  ul, ol {
-    margin-left: 20px;
-    margin-bottom: 15px;
-    color: $bleu-marine; // Listes en bleu marine
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  // Boutons
-  button {
-    background-color: $rouge; // Boutons en rouge
-    color: $creme; // Texte des boutons en crème
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-  
-    &:hover {
-      background-color: darken($rouge, 10%);
-    }
-  }
-  
-  button:disabled {
-    pointer-events: none;
-    opacity: 0.4;
-  }
-  
-  // Tables
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    color: $bleu-marine; // Tables en bleu marine
-  
-    th, td {
-      border: 1px solid $rouge; // Bordures des tableaux en rouge
-      padding: 10px;
-      text-align: left;
-    }
-  
-    th {
-      background-color: lighten($rouge, 30%);
-      color: $creme; // Texte des en-têtes en crème
-    }
-  
-    tr:nth-child(even) {
-      background-color: lighten($creme, 10%);
-    }
-  }
-  
-  // Texte en gras
-  strong, b {
-    color: $bleu-marine; // Texte en gras en bleu marine
-  }
-  
-  // Texte en italique
-  em, i {
-    color: $bleu-marine; // Texte en italique en bleu marine
-    font-style: italic;
-  }
-  
-  // Formulaires
-  input, textarea, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid $rouge; // Bordures des formulaires en rouge
-    border-radius: 5px;
-    background-color: lighten($creme, 10%);
-    color: $bleu-marine; // Texte des formulaires en bleu marine
-  }
-  
-  input[type="submit"], input[type="button"] {
-    background-color: $rouge; // Boutons de formulaire en rouge
-    color: $creme; // Texte des boutons de formulaire en crème
-    border: none;
-    cursor: pointer;
-  
-    &:hover {
-      background-color: darken($rouge, 10%);
-    }
-  }
-  
-  // Images
-  img {
-    max-width: 100%;
-    border: 3px solid $rouge; // Bordures des images en rouge
-    border-radius: 10px;
-  }
-  
-  // Citations
-  blockquote {
-    border-left: 5px solid $rouge; // Bordure gauche des citations en rouge
-    margin: 15px 0;
-    padding-left: 10px;
-    color: darken($bleu-marine, 20%); // Texte des citations en bleu marine plus foncé
-    font-style: italic;
-  }
-  
-  // Codes et pré
-  code, pre {
-    background-color: lighten($creme, 15%);
-    padding: 5px;
-    border-radius: 5px;
-    color: $rouge; // Texte des codes en rouge
-    font-family: 'Courier New', monospace;
-  }
-  
-  // Animation (hérité de styles.css)
-  .dg-rotate {
-    animation: dg-rotate 4s linear infinite;
-  }
-  }
