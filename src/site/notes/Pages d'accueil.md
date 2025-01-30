@@ -14,3 +14,4 @@ Ce système me permet de consigner mes progrès, de faire le lien entre mes idé
 [[1.1. Les réseaux affectent nos vies\|1.1. Les réseaux affectent nos vies]]
 [[1.2. Composants réseau\|1.2. Composants réseau]]
 [[1.3. Topologies et représentations du réseau\|1.3. Topologies et représentations du réseau]]
+[[1.4. Types courants de réseaux\|1.4. Types courants de réseaux]]
