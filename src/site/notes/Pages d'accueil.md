@@ -2,7 +2,6 @@
 {"dg-publish":true,"permalink":"/pages-d-accueil/","tags":["gardenEntry"]}
 ---
 
----
 # Pages d'accueil
 
 ## Présentation
